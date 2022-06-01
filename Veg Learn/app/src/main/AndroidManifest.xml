@@ -10,15 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearingApp">
         <activity
+            android:name=".Quiz"
+            android:exported="false"
+            android:label="Quiz"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".LessonImg"
             android:exported="false"
             android:label="Veg-Info"
-            android:parentActivityName=".Lesson"/>
+            android:parentActivityName=".Lesson" />
         <activity
             android:name=".Lesson"
             android:exported="false"
             android:label="Veg-Lesson"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
