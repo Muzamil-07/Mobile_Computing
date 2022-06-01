@@ -92,7 +92,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/OnionRow"
+                android:id="@+id/onionRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5dp"
