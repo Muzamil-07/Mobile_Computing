@@ -10,8 +10,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="56dp"
         android:text="Learn about vegetables here"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +21,8 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="409dp"
-        android:layout_height="415dp"
-        android:layout_marginTop="108dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:layout_editor_absoluteX="1dp">
 
@@ -33,92 +34,102 @@
             <TextView
                 android:id="@+id/potatoRow"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Potato"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/tomatoRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Tomato"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/carrotRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Carrot"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/cornRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Corn"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/eggplantRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Eggplant"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/garlicRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Garlic"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/greenpepperRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Green Pepper"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/onionRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Onion"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/radishRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Radish"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/mushroomRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Mushroom"
-                android:textSize="16sp" />
+                android:textSize="40sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
