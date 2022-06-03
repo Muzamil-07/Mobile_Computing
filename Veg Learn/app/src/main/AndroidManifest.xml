@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearingApp">
         <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
             android:name=".Quiz"
             android:exported="false"
             android:label="Quiz"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".LessonImg"
             android:exported="false"
