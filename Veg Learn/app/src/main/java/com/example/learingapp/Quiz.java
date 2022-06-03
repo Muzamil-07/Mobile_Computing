@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import java.util.ArrayList;
 
-public class Quiz<ArrayList> extends AppCompatActivity {
 
-    String[] key= {"Mushroom","Corn","Egg Plant","Radish","Carrot"};
+public class Quiz extends AppCompatActivity {
+
+    String[] key= {"Mushroom","Corn","Egg plant","Radish","Carrot"};
     int count = 0;
     ArrayList<String> correct = new ArrayList<String>();
+
     Button submitBtn;
     RadioGroup g1,g2,g3,g4,g5;
     RadioButton btn1,btn2,btn3,btn4,btn5;
