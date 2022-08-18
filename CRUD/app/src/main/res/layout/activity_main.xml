@@ -47,7 +47,7 @@
 
     <Button
         android:id="@+id/buttonViewAll"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/ButtonViewAll"
@@ -65,18 +65,11 @@
         app:layout_constraintTop_toTopOf="@+id/buttonViewAll"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ListView
-        android:id="@+id/listViewStudent"
-        android:layout_width="match_parent"
-        android:layout_height="476dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="251dp" />
-
     <Button
         android:id="@+id/button2"
-        android:layout_width="176dp"
-        android:layout_height="50dp"
-        android:text="Button"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Update"
         app:layout_constraintStart_toStartOf="@+id/buttonViewAll"
         app:layout_constraintTop_toBottomOf="@+id/buttonViewAll" />
 
@@ -84,9 +77,16 @@
         android:id="@+id/button3"
         android:layout_width="128dp"
         android:layout_height="46dp"
-        android:text="Button"
+        android:text="Delete"
         app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
         app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
+
+    <ListView
+        android:id="@+id/listViewStudent"
+        android:layout_width="416dp"
+        android:layout_height="511dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
