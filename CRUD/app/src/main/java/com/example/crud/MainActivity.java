@@ -2,6 +2,7 @@ package com.example.crud;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -11,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonAdd = findViewById(R.id.buttonAdd);
-        buttonViewAll = findViewById(R.id.buttonViewAll);
-        editName = findViewById(R.id.editTextName);
-        editRollNumber = findViewById(R.id.editTextRollNumber);
-        switchIsActive = findViewById(R.id.switchStudent);
+        buttonViewAll = findViewById(R.id.updateBtn);
+        editName = findViewById(R.id.updateTextName);
+        editRollNumber = findViewById(R.id.updateTextRollNumber);
+        switchIsActive = findViewById(R.id.switchUpdateStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +74,12 @@ listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 //        String rn =arr[1].spilt(":")[1];
 //        String isEnroll =arr[2].spilt(":")[1];
-        
+        Intent i = new Intent(MainActivity.this,UpdateDeleteForm.class);
+        i.putExtra("name",name);
+        i.putExtra("rn",rn);
+        i.putExtra("isEnroll",arr[2].split(":")[1]);
+        startActivity(i);
+
         Toast.makeText(MainActivity.this, name+rn+isEnroll, Toast.LENGTH_SHORT).show();
 
 
