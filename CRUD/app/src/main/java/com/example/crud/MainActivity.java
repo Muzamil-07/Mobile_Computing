@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -60,6 +62,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+        String currData = adapterView.getItemAtPosition(position).toString();
+        String arr[] = currData.split(",");
+        String name = arr[0].split(":")[1];
+        String rn = arr[1].split(":")[1];
+        Boolean isEnroll = Boolean.parseBoolean(arr[2].split(":")[1]);
+
+//        String rn =arr[1].spilt(":")[1];
+//        String isEnroll =arr[2].spilt(":")[1];
+        
+        Toast.makeText(MainActivity.this, name+rn+isEnroll, Toast.LENGTH_SHORT).show();
+
+
+    }
+});
+
+
 
     }
 }

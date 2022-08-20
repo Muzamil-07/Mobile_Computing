@@ -7,7 +7,7 @@ public class StudentModel {
 
     @Override
     public String toString() {
-        return  "name: " + name + ' ' +
+        return  "name:" + name  +
                 ", rollNmber:" + rollNmber +
                 ", isEnroll:" + isEnroll;
     }
