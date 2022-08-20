@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonAdd = findViewById(R.id.buttonAdd);
-        buttonViewAll = findViewById(R.id.updateBtn);
-        editName = findViewById(R.id.updateTextName);
-        editRollNumber = findViewById(R.id.updateTextRollNumber);
-        switchIsActive = findViewById(R.id.switchUpdateStudent);
+        buttonViewAll = findViewById(R.id.viewBtn);
+        editName = findViewById(R.id.TextName);
+        editRollNumber = findViewById(R.id.TextRollNumber);
+        switchIsActive = findViewById(R.id.switchStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {

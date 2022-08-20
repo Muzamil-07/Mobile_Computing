@@ -53,6 +53,17 @@ public class DBHelper extends SQLiteOpenHelper {
         //if (insert == -1) { return false; }
         //else{return true;}
     }
+    public void  updateStudent(StudentModel STUDENTModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        ContentValues cv = new ContentValues();
+
+        cv.put(STUDENT_NAME, STUDENTModel.getName());
+        cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
+        cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
+        db.update
+    db.close();
+    }
 
     public ArrayList<StudentModel> getAllStudents() {
 
