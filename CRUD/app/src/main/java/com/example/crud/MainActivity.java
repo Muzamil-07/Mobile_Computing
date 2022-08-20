@@ -78,6 +78,7 @@ listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         i.putExtra("name",name);
         i.putExtra("rn",rn);
         i.putExtra("isEnroll",arr[2].split(":")[1]);
+        i.putExtra("id",arr[3].split(":")[1]);
         startActivity(i);
 
 //        Toast.makeText(MainActivity.this, name+rn+isEnroll, Toast.LENGTH_SHORT).show();

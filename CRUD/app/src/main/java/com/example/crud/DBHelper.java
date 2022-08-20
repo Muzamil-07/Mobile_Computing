@@ -61,7 +61,8 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(STUDENT_NAME, STUDENTModel.getName());
         cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
         cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
-        db.update
+        String id=String.valueOf(STUDENTModel.getId());
+        db.update(STUDENT_TABLE,cv,"StudentID = ?",new String[]{id});
     db.close();
     }
 
@@ -79,7 +80,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
                 studentArrayList.add(new StudentModel(cursorCourses.getString(1),
                         cursorCourses.getInt(2),
-                        cursorCourses.getInt(3) == 1 ? true : false));
+                        cursorCourses.getInt(3) == 1 ? true : false,cursorCourses.getInt(0)));
             } while (cursorCourses.moveToNext());
 
         }
