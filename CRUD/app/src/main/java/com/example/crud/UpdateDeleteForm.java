@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class UpdateDeleteForm extends AppCompatActivity {
 
@@ -22,8 +24,14 @@ public class UpdateDeleteForm extends AppCompatActivity {
     Intent i = getIntent();
     String name=i.getStringExtra("name");
     String rn=i.getStringExtra("rn");
+    String isEnroll=i.getStringExtra("isEnroll");
     studentName.setText(name);
     rollNum.setText(rn);
+    Toast.makeText(UpdateDeleteForm.this, String.valueOf(isEnroll.trim().length()), Toast.LENGTH_SHORT).show();
+
+    if(isEnroll.trim()=="true"){
+        enroll.setChecked(true);
+    }
 
     }
 }
