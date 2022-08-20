@@ -57,8 +57,12 @@ public class UpdateDeleteForm extends AppCompatActivity {
             catch (Exception e){
                 Toast.makeText(UpdateDeleteForm.this, "Error", Toast.LENGTH_SHORT).show();
             }
+
             DBHelper dbHelper  = new DBHelper(UpdateDeleteForm.this);
             dbHelper.updateStudent(studentModel);
+            Toast.makeText(UpdateDeleteForm.this, "Student Updated", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(UpdateDeleteForm.this,MainActivity.class);
+            startActivity(i);
         }
     });
 
@@ -68,6 +72,10 @@ public class UpdateDeleteForm extends AppCompatActivity {
 
             DBHelper dbHelper  = new DBHelper(UpdateDeleteForm.this);
             dbHelper.deleteStudent(String.valueOf(id));
+            Toast.makeText(UpdateDeleteForm.this, "Student Deleted", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(UpdateDeleteForm.this,MainActivity.class);
+            startActivity(i);
+
         }
     });
 

@@ -17,7 +17,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String STUDENT_TABLE = "StudentTable";
 
 
-
     public DBHelper(@Nullable Context context) {
         super(context, "MyDB.db", null, 1);
     }
