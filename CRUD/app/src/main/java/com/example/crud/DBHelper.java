@@ -65,6 +65,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.update(STUDENT_TABLE,cv,"StudentID = ?",new String[]{id});
     db.close();
     }
+    public void  deleteStudent(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        //Hash map, as we did in bundles
+        db.delete(STUDENT_TABLE,"StudentID = ?",new String[]{id});
+    db.close();
+    }
+
 
     public ArrayList<StudentModel> getAllStudents() {
 

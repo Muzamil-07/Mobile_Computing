@@ -52,7 +52,7 @@ public class UpdateDeleteForm extends AppCompatActivity {
         public void onClick(View v) {
             try {
                 studentModel = new StudentModel(studentName.getText().toString(), Integer.parseInt(rollNum.getText().toString()), enroll.isChecked(),id);
-                //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
             }
             catch (Exception e){
                 Toast.makeText(UpdateDeleteForm.this, "Error", Toast.LENGTH_SHORT).show();
@@ -65,7 +65,9 @@ public class UpdateDeleteForm extends AppCompatActivity {
     delBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            
+
+            DBHelper dbHelper  = new DBHelper(UpdateDeleteForm.this);
+            dbHelper.deleteStudent(String.valueOf(id));
         }
     });
 
