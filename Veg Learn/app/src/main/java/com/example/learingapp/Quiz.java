@@ -32,11 +32,26 @@ public class Quiz extends AppCompatActivity {
         g5=(RadioGroup)findViewById(R.id.g5);
         submitBtn = findViewById(R.id.submitBtn);
 
+
+        if(correct.size()<5){
+            submitBtn.setEnabled(false);
+        }
+        else{
+            submitBtn.setEnabled(true);
+        }
+
         g1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 btn1=findViewById(i);
                 correct.add((String) btn1.getText());
+
+                if(correct.size()<5){
+                    submitBtn.setEnabled(false);
+                }
+                else{
+                    submitBtn.setEnabled(true);
+                }
             }
         });
         g2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -44,6 +59,13 @@ public class Quiz extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 btn2=findViewById(i);
                 correct.add((String) btn2.getText());
+
+                if(correct.size()<5){
+                    submitBtn.setEnabled(false);
+                }
+                else{
+                    submitBtn.setEnabled(true);
+                }
             }
         });
         g3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -51,6 +73,13 @@ public class Quiz extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 btn3=findViewById(i);
                 correct.add((String) btn3.getText());
+
+                if(correct.size()<5){
+                    submitBtn.setEnabled(false);
+                }
+                else{
+                    submitBtn.setEnabled(true);
+                }
             }
         });
         g4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -58,6 +87,13 @@ public class Quiz extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 btn4=findViewById(i);
                 correct.add((String) btn4.getText());
+
+                if(correct.size()<5){
+                    submitBtn.setEnabled(false);
+                }
+                else{
+                    submitBtn.setEnabled(true);
+                }
             }
         });
         g5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -65,6 +101,13 @@ public class Quiz extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 btn5=findViewById(i);
                 correct.add((String) btn5.getText());
+
+                if(correct.size()<5){
+                    submitBtn.setEnabled(false);
+                }
+                else{
+                    submitBtn.setEnabled(true);
+                }
             }
         });
 

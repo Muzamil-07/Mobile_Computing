@@ -72,16 +72,13 @@ listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         String rn = arr[1].split(":")[1];
         Boolean isEnroll = Boolean.parseBoolean(arr[2].split(":")[1]);
 
-//        String rn =arr[1].spilt(":")[1];
-//        String isEnroll =arr[2].spilt(":")[1];
+
         Intent i = new Intent(MainActivity.this,UpdateDeleteForm.class);
         i.putExtra("name",name);
         i.putExtra("rn",rn);
         i.putExtra("isEnroll",arr[2].split(":")[1]);
         i.putExtra("id",arr[3].split(":")[1]);
         startActivity(i);
-
-//        Toast.makeText(MainActivity.this, name+rn+isEnroll, Toast.LENGTH_SHORT).show();
 
 
     }
