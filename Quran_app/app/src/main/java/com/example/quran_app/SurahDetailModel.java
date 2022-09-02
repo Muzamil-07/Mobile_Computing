@@ -3,41 +3,24 @@ package com.example.quran_app;
 import java.util.ArrayList;
 
 public class SurahDetailModel {
-    String SurahID;
-    String SurahNameE;
-    String Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
-    String TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
-    String TasmiahTarjmaEng = "....................";
     String ArabicText;
     String FatehMuhammadJalandri;
     String DrMohsinKhan;
 
-    public SurahDetailModel(String surahID, String surahNameE, String tasmiah, String tasmiahTarjma, String tasmiahTarjmaEng, String arabicText, String fatehMuhammadJalandri, String drMohsinKhan) {
-        SurahID = surahID;
-        SurahNameE = surahNameE;
-        Tasmiah = tasmiah;
-        TasmiahTarjma = tasmiahTarjma;
-        TasmiahTarjmaEng = tasmiahTarjmaEng;
+    public SurahDetailModel(String arabicText, String fatehMuhammadJalandri, String drMohsinKhan) {
         ArabicText = arabicText;
         FatehMuhammadJalandri = fatehMuhammadJalandri;
         DrMohsinKhan = drMohsinKhan;
     }
 
-    public String getSurahID() {
-        return SurahID;
+    @Override
+    public String toString() {
+        return  ArabicText+"\n" +
+                "\n" + FatehMuhammadJalandri +
+                "\n" + DrMohsinKhan;
     }
 
-    public void setSurahID(String surahID) {
-        SurahID = surahID;
-    }
 
-    public String getSurahNameE() {
-        return SurahNameE;
-    }
-
-    public void setSurahNameE(String surahNameE) {
-        SurahNameE = surahNameE;
-    }
 
     public String getArabicText() {
         return ArabicText;

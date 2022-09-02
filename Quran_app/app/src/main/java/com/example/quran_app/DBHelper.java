@@ -56,5 +56,57 @@ public class DBHelper extends SQLiteOpenHelper {
         cursorCourses.close();
         return surahArrayList;
     }
+public ArrayList<SurahDetailModel> getSurahDetail(String id) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+    String Tasmiah,TasmiahTarjma;
+
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where SuraID="+id, null);
+
+        ArrayList<SurahDetailModel> surahArrayList = new ArrayList<>();
+    if(!id.matches("1")){
+        Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
+        TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
+        surahArrayList.add(new SurahDetailModel(Tasmiah,TasmiahTarjma,"In the Name of Allah, the Most Beneficent, the Most Merciful."));
+    }
+        // moving our cursor to first position.
+        if (cursorCourses.moveToFirst()) {
+            do {
+                surahArrayList.add(new SurahDetailModel(cursorCourses.getString(3).trim(),cursorCourses.getString(4).trim(),cursorCourses.getString(6).trim()));
+            } while (cursorCourses.moveToNext());
+
+        }
+
+        cursorCourses.close();
+        return surahArrayList;
+    }
+
+    public ArrayList<SurahDetailModel> getParahDetail(String id) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+    String Tasmiah,TasmiahTarjma;
+
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where ParaID="+id, null);
+
+        ArrayList<SurahDetailModel> surahArrayList = new ArrayList<>();
+
+        Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
+        TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
+        surahArrayList.add(new SurahDetailModel(Tasmiah,TasmiahTarjma,"In the Name of Allah, the Most Beneficent, the Most Merciful."));
+
+        // moving our cursor to first position.
+        if (cursorCourses.moveToFirst()) {
+            do {
+                surahArrayList.add(new SurahDetailModel(cursorCourses.getString(3).trim(),cursorCourses.getString(4).trim(),cursorCourses.getString(6).trim()));
+            } while (cursorCourses.moveToNext());
+
+        }
+
+        cursorCourses.close();
+        return surahArrayList;
+    }
+
+
+
 
 }

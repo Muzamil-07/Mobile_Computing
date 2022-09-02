@@ -51,10 +51,12 @@ public class GalleryFragment extends Fragment {
                 String currData = adapterView.getItemAtPosition(position).toString();
                 String arr[] = currData.split(" ");
                 String id = arr[0];
+                String name=arr[1];
 
 
                 Intent i = new Intent(getContext(), Surah_Detail.class);
                 i.putExtra("surahId",id);
+                i.putExtra("name",name);
 
                 startActivity(i);
 
