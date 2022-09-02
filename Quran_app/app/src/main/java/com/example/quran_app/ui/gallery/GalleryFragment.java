@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.quran_app.CustomAdapter;
+import com.example.quran_app.DBHelper;
 import com.example.quran_app.R;
+import com.example.quran_app.SurahModel;
 import com.example.quran_app.databinding.FragmentGalleryBinding;
 
 import java.util.ArrayList;
@@ -28,12 +30,18 @@ public class GalleryFragment extends Fragment {
         // Inflate the layout for this fragment
         View contentView = inflater.inflate(R.layout.fragment_gallery, container, false);
         ListView listView = contentView.findViewById(R.id.listview);
-        List<String> list = new ArrayList<>();
-        for(int i=0;i<100;i++)
-            list.add("Item \n" + i);
 
-        CustomAdapter listAdapter = new CustomAdapter(list,getContext());
-        listView.setAdapter(listAdapter);
+        DBHelper dbHelper=new DBHelper(getContext());
+        List<SurahModel> list = dbHelper.getAllSurah();
+//        for(int i=0;i<10;i++)
+//            list.("Item \n" + i);
+
+        ArrayAdapter ad = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(ad);
+
+
+//        listView.set
+
         return contentView;
 
     }

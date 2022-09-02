@@ -5,21 +5,21 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
-    public static final String STUDENT_ID = "StudentID";
-    public static final String STUDENT_NAME = "StudentName";
-    public static final String STUDENT_ROLL = "StudentRollNumber";
-    public static final String STUDENT_ENROLL = "IsEnrolled";
-    public static final String STUDENT_TABLE = "StudentTable";
+
+    public static final String TABLE = "tsurah";
 
 
     public DBHelper(@Nullable Context context) {
-        super(context, "MyDB.db", null, 1);
+        super(context, "quran_database_new.db", null, 1);
     }
 
     @Override
@@ -35,27 +35,26 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
-    public ArrayList<StudentModel> getAllStudents() {
+    public ArrayList<SurahModel> getAllSurah() {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + STUDENT_TABLE, null);
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tsurah", null);
 
-        ArrayList<StudentModel> studentArrayList = new ArrayList<>();
+        ArrayList<SurahModel> surahArrayList = new ArrayList<>();
 
         // moving our cursor to first position.
         if (cursorCourses.moveToFirst()) {
             do {
 
-                studentArrayList.add(new StudentModel(cursorCourses.getString(1),
-                        cursorCourses.getInt(2),
-                        cursorCourses.getInt(3) == 1 ? true : false,cursorCourses.getInt(0)));
+                surahArrayList.add(new SurahModel(cursorCourses.getString(0)
+                        ,cursorCourses.getString(4)));
             } while (cursorCourses.moveToNext());
 
         }
 
         cursorCourses.close();
-        return studentArrayList;
+        return surahArrayList;
     }
 
 }

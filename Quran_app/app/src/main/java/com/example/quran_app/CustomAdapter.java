@@ -1,6 +1,7 @@
 package com.example.quran_app;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,10 +10,10 @@ import android.widget.TextView;
 import java.util.List;
 
 public class CustomAdapter extends BaseAdapter {
-    List<String> items;
+    List<SurahModel> items;
 
     Context cont;
-    public CustomAdapter(List<String> items,Context c) {
+    public CustomAdapter(List<SurahModel> items,Context c) {
         super();
         this.items = items;
         this.cont=c;
@@ -36,7 +37,7 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         TextView textView = new TextView(cont);
-        textView.setText(items.get(i));
+        textView.setText(items.get(i).getSurahID());
         return textView;
     }
 
