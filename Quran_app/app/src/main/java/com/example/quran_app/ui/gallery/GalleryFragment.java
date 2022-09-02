@@ -30,7 +30,7 @@ public class GalleryFragment extends Fragment {
         ListView listView = contentView.findViewById(R.id.listview);
         List<String> list = new ArrayList<>();
         for(int i=0;i<100;i++)
-            list.add("Item "+i);
+            list.add("Item \n" + i);
 
         CustomAdapter listAdapter = new CustomAdapter(list,getContext());
         listView.setAdapter(listAdapter);
