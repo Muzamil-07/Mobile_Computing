@@ -11,7 +11,7 @@ public class SurahModel {
 
     @Override
     public String toString() {
-        return SurahID + ". " + SurahNameE;
+        return SurahID + " " + SurahNameE;
     }
 
     public String getSurahID() {

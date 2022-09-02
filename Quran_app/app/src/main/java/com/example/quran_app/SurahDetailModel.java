@@ -1,2 +1,4 @@
-package com.example.quran_app;public class SurahDetailModel {
+package com.example.quran_app;
+
+public class SurahDetailModel {
 }

@@ -1,9 +1,11 @@
 package com.example.quran_app.ui.gallery;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import com.example.quran_app.CustomAdapter;
 import com.example.quran_app.DBHelper;
 import com.example.quran_app.R;
 import com.example.quran_app.SurahModel;
+import com.example.quran_app.Surah_Detail;
 import com.example.quran_app.databinding.FragmentGalleryBinding;
 
 import java.util.ArrayList;
@@ -41,6 +44,24 @@ public class GalleryFragment extends Fragment {
 
 
 //        listView.set
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                String currData = adapterView.getItemAtPosition(position).toString();
+                String arr[] = currData.split(" ");
+                String id = arr[0];
+
+
+                Intent i = new Intent(getContext(), Surah_Detail.class);
+                i.putExtra("surahId",id);
+
+                startActivity(i);
+
+
+            }
+        });
+
 
         return contentView;
 
