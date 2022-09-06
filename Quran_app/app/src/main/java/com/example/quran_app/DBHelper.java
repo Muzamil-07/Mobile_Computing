@@ -61,7 +61,7 @@ public ArrayList<SurahDetailModel> getSurahDetail(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
     String Tasmiah,TasmiahTarjma;
 
-        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where SuraID="+id, null);
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where SuraID="+id+ " ORDER BY AyaNo", null);
 
         ArrayList<SurahDetailModel> surahArrayList = new ArrayList<>();
     if(!id.matches("1")){
@@ -86,17 +86,23 @@ public ArrayList<SurahDetailModel> getSurahDetail(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
     String Tasmiah,TasmiahTarjma;
 
-        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where ParaID="+id, null);
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + "tayah where ParaID="+id+" ORDER BY AyaID",null);
 
         ArrayList<SurahDetailModel> surahArrayList = new ArrayList<>();
 
-        Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
-        TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
-        surahArrayList.add(new SurahDetailModel(Tasmiah,TasmiahTarjma,"In the Name of Allah, the Most Beneficent, the Most Merciful."));
+//        Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
+//        TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
+//        surahArrayList.add(new SurahDetailModel(Tasmiah,TasmiahTarjma,"In the Name of Allah, the Most Beneficent, the Most Merciful."));
 
         // moving our cursor to first position.
         if (cursorCourses.moveToFirst()) {
+
             do {
+                if(cursorCourses.getString(2).trim().matches("1")){
+                    Tasmiah = "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ";
+                    TasmiahTarjma = "شروع اللہ کا نام لے کر جو بڑا مہربان نہایت رحم والا ہے۔";
+                    surahArrayList.add(new SurahDetailModel(Tasmiah,TasmiahTarjma,"In the Name of Allah, the Most Beneficent, the Most Merciful."));
+                }
                 surahArrayList.add(new SurahDetailModel(cursorCourses.getString(3).trim(),cursorCourses.getString(4).trim(),cursorCourses.getString(6).trim()));
             } while (cursorCourses.moveToNext());
 

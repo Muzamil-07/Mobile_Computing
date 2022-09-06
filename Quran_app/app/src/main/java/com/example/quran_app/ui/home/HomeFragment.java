@@ -15,11 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.quran_app.DBHelper;
+import com.example.quran_app.ParaDetail;
 import com.example.quran_app.R;
 import com.example.quran_app.SurahModel;
 import com.example.quran_app.Surah_Detail;
 import com.example.quran_app.databinding.FragmentHomeBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -28,38 +30,38 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View contentView = inflater.inflate(R.layout.fragment_gallery, container, false);
+        View contentView = inflater.inflate(R.layout.fragment_home, container, false);
         ListView listView = contentView.findViewById(R.id.listview2);
 
         DBHelper dbHelper=new DBHelper(getContext());
-        List<SurahModel> list = dbHelper.getAllSurah();
-        for(int i=0;i<10;i++)
-            list.("Item \n" + i);
+        List<String> list = new ArrayList<String>();
+        for(int i=0;i<30;i++)
+            list.add("Para " + (i+1));
 
         ArrayAdapter ad = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,list);
         listView.setAdapter(ad);
 
 
 //        listView.set
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//
-//                String currData = adapterView.getItemAtPosition(position).toString();
-//                String arr[] = currData.split(" ");
-//                String id = arr[0];
-//                String name=arr[1];
-//
-//
-//                Intent i = new Intent(getContext(), Surah_Detail.class);
-//                i.putExtra("surahId",id);
-//                i.putExtra("name",name);
-//
-//                startActivity(i);
-//
-//
-//            }
-//        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                String currData = adapterView.getItemAtPosition(position).toString();
+                String arr[] = currData.split(" ");
+                String id = arr[1];
+                String name=arr[0]+" "+arr[1];
+
+
+                Intent i = new Intent(getContext(), ParaDetail.class);
+                i.putExtra("paraId",id);
+                i.putExtra("name",name);
+
+                startActivity(i);
+
+
+            }
+        });
 
 
         return contentView;
